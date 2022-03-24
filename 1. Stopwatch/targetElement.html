@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuerySelector</title>
+</head>
+<body>
+    <div class="class_query">
+        I'm the query selector for class
+    </div>
+    <div id="ID_query">
+        I'm the query selector for ID
+    </div>
+    <div id="id">
+        The getElementById
+    </div>
+<script>
+    document.querySelector('.class_query').textContent="Query selector for class works fine"
+    document.querySelector('#ID_query').textContent="Query selector for ID works fine"
+    document.getElementById('id').textContent="getElementById works fine"
+</script>
+
+</body>
+
+</html>

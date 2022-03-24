@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AddText</title>
+</head>
+<body>
+    <button class="add">
+    Add
+    </button>
+    <div class="text">
+        Hello 
+    </div>
+
+    <button class="start">Start</button>
+    <div class="seconds"></div>
+    
+<script>
+    var addButton = document.querySelector(".add");
+    var textCont = document.querySelector(".text");
+
+    addButton.addEventListener("click", function(){
+        textCont.textContent += " SK";
+    })
+
+    var s=0;
+    var counter;
+    var start = document.querySelector('.start');
+    var seconds = document.querySelector('.seconds');
+
+    start.addEventListener("click", function(){
+        if(!counter)
+        counter = setInterval(run_seconds, 1000);
+
+        function run_seconds(){
+            seconds.textContent = ++s;
+        }
+    })
+</script>
+
+</body>
+
+</html>
