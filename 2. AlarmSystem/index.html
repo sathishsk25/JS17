@@ -8,8 +8,9 @@
 </head>
 <body>
     <div class="container">
+        <button class="set_alarm">Set Time</button>
         <div class="current_time"></div>
-        <div class="alarm_time"></div>
+        <div class="alarm_time">00:00:00</div>
         <div class="alarm">Not yet !!</div>
     </div>
 
@@ -20,6 +21,7 @@
             display: flex;
             background-color: blueviolet;
             text-align: center;
+            align-items: center;
             justify-content: center;
             flex-flow: column;
         }
@@ -28,26 +30,34 @@
             text-align: center;
             font-size: 100px;
         }
+        .set_alarm{
+            text-align: center;
+            width: 200px;
+            font-size: 30px;
+            padding: 5PX;
+        }
     </style>
     <!-- javascript -->
 
     <script>
-        var a_hour = window.prompt("Enter the hour: ");
-        var a_minute = window.prompt("Enter the minute: ");
-        var a_seconds = window.prompt("Enter the seconds: ");
-
+        var set_alarm = document.querySelector('.set_alarm');
+        set_alarm.addEventListener("click",function(){
+            var a_hour = window.prompt("Enter the hour: ");
+            var a_minute = window.prompt("Enter the minute: ");
+            var a_seconds = window.prompt("Enter the seconds: "); 
+            document.querySelector('.alarm_time').textContent = a_hour + ":" + a_minute + ":" + a_seconds; 
         function current_date(){
             const date = new Date();
             var hr = date.getHours();
             var min = date.getMinutes();
             var ss = date.getSeconds();
             document.querySelector('.current_time').textContent = hr + ":" + min + ":" + ss;
-            document.querySelector('.alarm_time').textContent = a_hour + ":" + a_minute + ":" + a_seconds;
             if(a_hour == hr && a_minute == min && a_seconds == ss)
             document.querySelector('.alarm').textContent = "Time is over";
             setTimeout(current_date, 1000);
         }
         current_date();
+    })
     </script>
 </body>
 </html>
