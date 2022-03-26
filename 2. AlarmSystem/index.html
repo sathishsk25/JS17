@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alarm System</title>
+</head>
+<body>
+    <div class="container">
+        <div class="current_time"></div>
+        <div class="alarm_time"></div>
+        <div class="alarm">Not yet !!</div>
+    </div>
+
+    <!-- css -->
+    <style>
+        .container{
+            height: 100vh;
+            display: flex;
+            background-color: blueviolet;
+            text-align: center;
+            justify-content: center;
+            flex-flow: column;
+        }
+        .current_time,.alarm_time{
+            height: 20vh;
+            text-align: center;
+            font-size: 100px;
+        }
+    </style>
+    <!-- javascript -->
+
+    <script>
+        var a_hour = window.prompt("Enter the hour: ");
+        var a_minute = window.prompt("Enter the minute: ");
+        var a_seconds = window.prompt("Enter the seconds: ");
+
+        function current_date(){
+            const date = new Date();
+            var hr = date.getHours();
+            var min = date.getMinutes();
+            var ss = date.getSeconds();
+            document.querySelector('.current_time').textContent = hr + ":" + min + ":" + ss;
+            document.querySelector('.alarm_time').textContent = a_hour + ":" + a_minute + ":" + a_seconds;
+            if(a_hour == hr && a_minute == min && a_seconds == ss)
+            document.querySelector('.alarm').textContent = "Time is over";
+            setTimeout(current_date, 1000);
+        }
+        current_date();
+    </script>
+</body>
+</html>
