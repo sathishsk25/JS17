@@ -1,0 +1,21 @@
+        .container{
+            height: 100vh;
+            display: flex;
+            background-color: blueviolet;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            flex-flow: column;
+        }
+        .current_time,.alarm_time{
+            height: 20vh;
+            text-align: center;
+            font-size: 100px;
+        }
+        .set_alarm{
+            text-align: center;
+            width: 200px;
+            font-size: 30px;
+            padding: 5PX;
+        }
+   
